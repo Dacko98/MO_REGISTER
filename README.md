@@ -4,9 +4,10 @@
 
 ### Autori
 
+- Daniel Jacko xjacko04@stud.fit.vutbr.cz
 - Martin Frandel xfrand00@stud.fit.vutbr.cz
 - Patrik Staron xstaro04@stud.fit.vutbr.cz
-- Daniel Jacko xjacko04@stud.fit.vutbr.cz
+
 
 ### Dokumentácia
 
