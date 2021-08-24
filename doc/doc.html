@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;"/>
+    
+    <meta charset="utf-8">
+    <title>Projekt IIS</title>
+    <style type="text/css">
+    	table { border-collapse: collapse; }
+    	td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    	dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu 
+     podle použitého editoru -->
+
+<h1>Vlastné zadanie - IS pre mimovládne organizácie</h1> <!-- Nahradte názvem svého zadání -->
+
+<dl>
+	<dt>Autori</dt>
+	<dd>Martin Frandel <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xfrand00@stud.fit.vutbr.cz">xfrand00@stud.fit.vutbr.cz</a> -
+		Backend
+	</dd>
+	<dd>Daniel Jacko <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xjacko04@stud.fit.vutbr.cz">xjacko04@stud.fit.vutbr.cz</a> - 
+		Frontend
+	</dd>
+  <dd>Patrik Staroň <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xstaro04@stud.fit.vutbr.cz">xstaro04@stud.fit.vutbr.cz</a> - 
+		Databáza
+	</dd>
+	<dt>URL aplikace</dt>
+	<dd><a href="http://protected-anchorage-38892.herokuapp.com/">http://protected-anchorage-38892.herokuapp.com/</a></dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<p>Uveďte prosím existující zástupce <strong>všech rolí uživatelů</strong></p>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>admin@gmail.com</td><td>admin123</td><td>Admin</td></tr>
+<tr><td>basic@gmail.com</td><td>basic123</td><td>Prihlaseny užívateľ ktory nič nespravuje</tr>
+<tr><td>manager@gmail.com</td><td>manager123</td><td>Uživateľ ktorý spravuje Organizacie/Projekty</td></tr>
+</table>
+
+<div>
+    <img src="UC.jpg" alt="Use case">
+</div>
+
+<h2>Implementace</h2>
+<p>Stručná dokumentace k implementaci, která popisuje, které části projektu (např. PHP skripty) implementují jednotlivé případy použití.</p>
+<p>
+    Náš informačný sytém pre mimovladne organizacie bol vytvorený pomocou frameworku Laravel (8.12).<br>
+    Tento framework využíva Model view controller (MVC), ktorý nám umožnil rýchlo a myslím že aj efektivne vypracovať náš projekt.
+    Najhlavnejšou časťou našeho systému sú Modely (Mo, Post, Project, User) ktore nám umožnujú získavať a ukladať dáta do databáze.<br>
+    Views využívame pre zobrazovanie získaných dát a Controllery na ich prepojenie a prácu s nimi.
+</p>
+<h3>Modely:</h3>
+<h4>User: </h4>
+<p>Model User predstavuje užívateľa našeho systému.<br>
+Vytvorí sa pri registrácií užívatela, a je kľúčový pre vytváranie a správu jednotlivých organizacii a projektov.<br>
+- Model: <i>app\Models\User</i><br>
+- Controller: <i>app\Http\Controllers\Auth\*</i>
+</p>
+<h4>Mo</h4>
+<p>Model Mo reprezentuje mimovládnu organizaciu.<br>
+Mo može vytvoriť upraviť a zmazať iba prihlásený používateľ ktorý sa následne stáva jej správcom.<br>
+Na model Mo sú potom naviazané jednotlivé projekty.<br>
+- Model: <i>app\Models\Mo</i><br>
+- Controller: <i>app\Http\Controllers\PostmoController.php </i>
+</p>
+<h4>Post</h4>
+<p>Model Post reprezentuje prispevky pre jednotlive projekty alebo organizacie.<br>
+    Príspevky môže vytvoriť, upraviť, zmazať iba správca Organizacie alebo projektu.<br>
+    - Model: <i>app\Models\Post</i><br>
+    - Controller: <i>app\Http\Controllers\PostsController.php</i>
+</p>
+<h4>Project</h4>
+<p>Model Projekt reprezentuje jednotlive projekty ktore patria pod jednotlive organizacie (Modely Mo).<br>
+    Projekt môže vytvoriť len užívateľ, ktorý patrí do nejakej organizacií a následne ho môžu spravovať všetci užívatelia z danej
+    organizacie (Mo).<br>
+    - Model: <i>app\Models\Project</i><br>
+    - Controller: <i>app\Http\Controllers\PostprojectController.php</i>
+    </p>
+<br>
+<h3>Databáze</h3>
+<img src="ER.jpg" alt="ER diagram">
+
+<h2>Instalace</h2>
+
+Stručně popište:
+<ul>
+<lI>Na hosting sme využili sme hosting heroku, kde sme si nastavili všetky potrebne premenne a napojili na databázu.
+    Databáza nám beží na inom servery takže nebolo treba vytvárať novú.</li>
+<li><h5>Softwarove poziadavky</h5>
+    php: ^7.3|^8.0,<br>
+    ext-json: *,<br>
+    ckeditor/ckeditor: ^4.15,<br>
+    fideloper/proxy: ^4.4,<br>
+    fruitcake/laravel-cors: ^2.0,<br>
+    guzzlehttp/guzzle: ^7.0.1,<br>
+    intervention/image: ^2.5,<br>
+    juliomotol/laravel-auth-timeout: ^2.2,<br>
+    laravel/framework: ^8.12,<br>
+    laravel/tinker: ^2.5,<br>
+    laravel/ui: ^3.1,<br>
+    laravelcollective/html: ^6.2,<br>
+    league/flysystem: ^1.1<br>
+    </p>
+</li>
+</ul>
+
+
+</body>
+</html>
