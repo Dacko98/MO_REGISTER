@@ -1,6 +1,6 @@
 # Projekt do predmetu IIS
 
-## Informačný system pre mimovladne organizácie
+## Informačný systém pre mimovladne organizácie
 
 ### Autori
 
@@ -44,7 +44,7 @@ Databáza beží na servery [`mysql80.websupport.sk`](mysql80.websupport.sk).
 - `composer.json` Definicia používaných knižníc (PHP), spôsobu ich načítania a požadovaných verzií nástrojom Composer.
 - `./package.json` Definicia používaných JavaScript knižníc pre stahovanie JavaScript a CSS závislostí systému - NPM.
 
-#### Požadavky
+#### Požiadavky
 
 - Webový server, napr. [Apache](http://httpd.apache.org/download.cgi) alebo [Nginx](http://nginx.org/en/download.html) +
   [MySQL](https://www.mysql.com/downloads) alebo [MariaDB](https://mariadb.org/download)
@@ -57,5 +57,4 @@ Databáza beží na servery [`mysql80.websupport.sk`](mysql80.websupport.sk).
 
 ### Nasadenie
 
-Na hosting sme využili hosting heroku, kde sme si nastavili všetky potrebne premenne a napojili na databázu.
-Databáza nám beží na inom servery takže nebolo treba vytvárať novú.
+Na hosting sme využili hosting heroku, kde sme si nastavili všetky potrebné premenné a napojili na databázu.
