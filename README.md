@@ -17,7 +17,7 @@ Pre zobrazenie
 ### Databáza
 
 Databáza beží na servery [`mysql80.websupport.sk`](mysql80.websupport.sk).
-Pre zobrazenie dokumentácie bez nutnosti stiahnuť: [`Dokumentácia`](https://htmlpreview.github.io/?https://github.com/Dacko98/MO_REGISTER/blob/main/doc/doc.html)
+Pre okamžité zobrazenie dokumentácie na webe: [`Dokumentácia`](https://htmlpreview.github.io/?https://github.com/Dacko98/MO_REGISTER/blob/main/doc/doc.html)
 
 ### Štruktúra projektu
 
